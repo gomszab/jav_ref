@@ -61,31 +61,19 @@ form.addEventListener('submit', function(e){
     }
    
     let valid = true; // a valid valtozo erteke igaz
-    const lastNameValue = lastNameHtmlElement.value; // a lastNameHtmlElement value erteket beleteszem egy lokalis valtozoba
-    const firstNameValue = firstNameHtmlElement.value; // a firstNameHtmlElement value erteket beleteszem egy lokalis valtozoba
-    const firstName2Value = firstName2HtmlElement.value === "" ? undefined : firstName2HtmlElement.value; // a firstNameHtmlElement2 value erteket beleteszem egy lokalis valtozoba
-    // az ertekadas soran vizsgalom, hogy a firstName2HtmlElement.value ures string-e, amennyiben ez fennall, a valtozonak undefined erteket adok, mivel a render logikat a tablazatnal ugy irtuk meg, hogy undefined eseten ne hozzon letre uj span-t
-    // ures string eseten letrehozna egy ures span taget a html-re ami felesleges.
 
-    if(lastNameValue === ''){ // ha a vezeteknev beviteli mezoje ures
-        const parentElement = lastNameHtmlElement.parentElement; // eltaroljuk egy valtozoba a vezeteknev beviteli mezojenek a parentelement propertyjet (jelenleg ez a htmlen:  <div class="field">)
-        const errorplace = parentElement.querySelector('.error'); // A vezeteknev beviteli mezojenek a parentelement divjeben megkeressuk az elso olyan elemet, amin rajta van az error class
-        if(errorplace != undefined) { // Ha talaltunk ilyen mezot, tehat nem undefined
-            errorplace.innerHTML = 'A vezeteknev megadasa kotelezo'; // Akkor beleirjuk a hibauzenetunket
-        }
-        valid = false; // a valid valtozo erteket hamisra csereljuk (mivel nem a belso ifbe tettuk, kiszurjuk, hogy esetleg a html-en nem hoztuk letre a hibauzenetnek a helyet)
+    if(!validateFormHtmlField(lastNameHtmlElement, "A vezeteknev megadasa kotelezo")){ // Ha a validateFormHtmlField fuggveny hamissal ter vissza a bementei lastName htmlElement eseten
+        valid = false; // a valid valtozo erteket false-ra allitjuk
     }
 
-    if(firstNameValue === ''){  // ha a keresztnev beviteli mezoje ures
-        const parentElement = firstNameHtmlElement.parentElement; // eltaroljuk egy valtozoba a keresztnev beviteli mezojenek a parentelement propertyjet (jelenleg ez a htmlen:  <div class="field">)
-        const errorplace = parentElement.querySelector('.error'); // A keresztnev beviteli mezojenek a parentelement divjeben megkeressuk az elso olyan elemet, amin rajta van az error class
-        if(errorplace != undefined) { // Ha talaltunk ilyen mezot, tehat nem undefined
-            errorplace.innerHTML = 'A keresztnev megadasa kotelezo'; // Akkor beleirjuk a hibauzenetunket
-        }
-        valid = false; // a valid valtozo erteket hamisra csereljuk (mivel nem a belso ifbe tettuk, kiszurjuk, hogy esetleg a html-en nem hoztuk letre a hibauzenetnek a helyet)
+    if(!validateFormHtmlField(firstNameHtmlElement, "A keresztnev megadasa kotelezo")){ // Ha a validateFormHtmlField fuggveny hamissal ter vissza a bementei lastName htmlElement eseten
+        valid = false;  // a valid valtozo erteket false-ra allitjuk
     }
 
-    if(valid){
+    if(valid){  // a valid valtozo erteke meg mindig igaz, akkor
+        const lastNameValue = lastNameHtmlElement.value; // a lastNameHtmlElement value erteket beleteszem egy lokalis valtozoba
+        const firstNameValue = firstNameHtmlElement.value; // a firstNameHtmlElement value erteket beleteszem egy lokalis valtozoba
+        const firstName2Value = firstName2HtmlElement.value === "" ? undefined : firstName2HtmlElement.value; // a firstNameHtmlElement2 value erteket vagy egy undefined-t beleteszek egy lokalis valtozoba
         const newElement = { // definialok egy uj elementet
             lastName: lastNameValue, // az uj objektum lastName erteke a lastNameValue lesz
             firstName: firstNameValue, // az uj objektum firstName erteke a firstNameValue lesz
@@ -98,3 +86,17 @@ form.addEventListener('submit', function(e){
     }
     
 })
+
+function validateFormHtmlField(inputhtmlElement, errormessage){ // definialjuk a validateFormHtmlField fuggvenyt
+    let valid = true; // definialjuk a valid lokalis valtozot true ertekkel
+    if(inputhtmlElement.value === ''){ // ha a parameterben kapott beviteli mezo ures
+        const parentElement = inputhtmlElement.parentElement; // eltaroljuk egy valtozoba a kapott htmlelementnek a parentelement propertyjet (jelenleg ez a htmlen:  <div class="field">)
+        const errorplace = parentElement.querySelector('.error'); // A vezeteknev beviteli mezojenek a parentelement divjeben megkeressuk az elso olyan elemet, amin rajta van az error class
+        if(errorplace != undefined) { // Ha talaltunk ilyen mezot, tehat nem undefined
+            errorplace.innerHTML = errormessage; // Akkor beleirjuk a hibauzenetunket
+        }
+        valid = false; // a valid valtozo erteket hamisra csereljuk
+    }
+
+    return valid; // visszaterek a lokalis valid valtozoval, ami akkor hamis ha htmlelement nem ment at a validacion, egyebkent igazzal ter vissza
+}
