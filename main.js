@@ -54,17 +54,47 @@ form.addEventListener('submit', function(e){
     const firstNameHtmlElement = document.getElementById('keresztnev') // elkerem a htmlelementet, amely az keresztnev id-val van definialva
     const firstName2HtmlElement = document.getElementById('keresztnev2') // elkerem a htmlelementet, amely az keresztnev2 id-val van definialva
 
+    const thisForm = e.currentTarget; // Az event currentTarget tulajdonsaga a formunkat tartalmazza, ezt eltaroljuk egy lokalis valtozoba 
+    const errorHtmlElements = thisForm.querySelectorAll('.error'); // A formon beluli osszes error classal rendelkezo html elementet elkerjuk
+    for(const errorElement of errorHtmlElements){ // Vegigiteralunk a visszakapott errorhtmlelementeken
+        errorElement.innerHTML = ''; // toroljuk az aktualis elem tartalmat
+    }
+   
+    let valid = true; // a valid valtozo erteke igaz
     const lastNameValue = lastNameHtmlElement.value; // a lastNameHtmlElement value erteket beleteszem egy lokalis valtozoba
     const firstNameValue = firstNameHtmlElement.value; // a firstNameHtmlElement value erteket beleteszem egy lokalis valtozoba
     const firstName2Value = firstName2HtmlElement.value === "" ? undefined : firstName2HtmlElement.value; // a firstNameHtmlElement2 value erteket beleteszem egy lokalis valtozoba
     // az ertekadas soran vizsgalom, hogy a firstName2HtmlElement.value ures string-e, amennyiben ez fennall, a valtozonak undefined erteket adok, mivel a render logikat a tablazatnal ugy irtuk meg, hogy undefined eseten ne hozzon letre uj span-t
     // ures string eseten letrehozna egy ures span taget a html-re ami felesleges.
-    const newElement = { // definialok egy uj elementet
-        lastName: lastNameValue, // az uj objektum lastName erteke a lastNameValue lesz
-        firstName: firstNameValue, // az uj objektum firstName erteke a firstNameValue lesz
-        firstName2: firstName2Value // az uj objektum firstName2 erteke a firstName2Value lesz
+
+    if(lastNameValue === ''){ // ha a vezeteknev beviteli mezoje ures
+        const parentElement = lastNameHtmlElement.parentElement; // eltaroljuk egy valtozoba a vezeteknev beviteli mezojenek a parentelement propertyjet (jelenleg ez a htmlen:  <div class="field">)
+        const errorplace = parentElement.querySelector('.error'); // A vezeteknev beviteli mezojenek a parentelement divjeben megkeressuk az elso olyan elemet, amin rajta van az error class
+        if(errorplace != undefined) { // Ha talaltunk ilyen mezot, tehat nem undefined
+            errorplace.innerHTML = 'A vezeteknev megadasa kotelezo'; // Akkor beleirjuk a hibauzenetunket
+        }
+        valid = false; // a valid valtozo erteket hamisra csereljuk (mivel nem a belso ifbe tettuk, kiszurjuk, hogy esetleg a html-en nem hoztuk letre a hibauzenetnek a helyet)
     }
-    array.push(newElement); // hozzaadom az arrayhez az uj objektumot
-    menuContainer.innerHTML = ''; // A tablazatom tartalmat ures stringel teszem egyenlove, ami azt eredmenyezi hogy torlodik a tabla
-    renderMenu() // ujra renderelem a fuggveny
+
+    if(firstNameValue === ''){  // ha a keresztnev beviteli mezoje ures
+        const parentElement = firstNameHtmlElement.parentElement; // eltaroljuk egy valtozoba a keresztnev beviteli mezojenek a parentelement propertyjet (jelenleg ez a htmlen:  <div class="field">)
+        const errorplace = parentElement.querySelector('.error'); // A keresztnev beviteli mezojenek a parentelement divjeben megkeressuk az elso olyan elemet, amin rajta van az error class
+        if(errorplace != undefined) { // Ha talaltunk ilyen mezot, tehat nem undefined
+            errorplace.innerHTML = 'A keresztnev megadasa kotelezo'; // Akkor beleirjuk a hibauzenetunket
+        }
+        valid = false; // a valid valtozo erteket hamisra csereljuk (mivel nem a belso ifbe tettuk, kiszurjuk, hogy esetleg a html-en nem hoztuk letre a hibauzenetnek a helyet)
+    }
+
+    if(valid){
+        const newElement = { // definialok egy uj elementet
+            lastName: lastNameValue, // az uj objektum lastName erteke a lastNameValue lesz
+            firstName: firstNameValue, // az uj objektum firstName erteke a firstNameValue lesz
+            firstName2: firstName2Value // az uj objektum firstName2 erteke a firstName2Value lesz
+        }
+        array.push(newElement); // hozzaadom az arrayhez az uj objektumot
+        menuContainer.innerHTML = ''; // A tablazatom tartalmat ures stringel teszem egyenlove, ami azt eredmenyezi hogy torlodik a tabla
+        renderMenu() // ujra renderelem a fuggveny
+        thisForm.reset(); // visszaallitjuk a formunkat az alapallapotba
+    }
+    
 })
