@@ -45,3 +45,26 @@ function renderMenu(){ // definialom a renderMenu fuggvenyt
 }
 
 renderMenu(); // meghivom a renderMenu fuggvenyt
+
+const form = document.getElementById('urlap'); // elkerem a htmlelementet, amely az urlap id-val van definialva
+
+form.addEventListener('submit', function(e){
+    e.preventDefault(); // megakadalyozom, hogy a bongeszo alapertelmezett mukodese lefusson submit eseten
+    const lastNameHtmlElement = document.getElementById('vezeteknev') // elkerem a htmlelementet, amely az vezeteknev id-val van definialva
+    const firstNameHtmlElement = document.getElementById('keresztnev') // elkerem a htmlelementet, amely az keresztnev id-val van definialva
+    const firstName2HtmlElement = document.getElementById('keresztnev2') // elkerem a htmlelementet, amely az keresztnev2 id-val van definialva
+
+    const lastNameValue = lastNameHtmlElement.value; // a lastNameHtmlElement value erteket beleteszem egy lokalis valtozoba
+    const firstNameValue = firstNameHtmlElement.value; // a firstNameHtmlElement value erteket beleteszem egy lokalis valtozoba
+    const firstName2Value = firstName2HtmlElement.value === "" ? undefined : firstName2HtmlElement.value; // a firstNameHtmlElement2 value erteket beleteszem egy lokalis valtozoba
+    // az ertekadas soran vizsgalom, hogy a firstName2HtmlElement.value ures string-e, amennyiben ez fennall, a valtozonak undefined erteket adok, mivel a render logikat a tablazatnal ugy irtuk meg, hogy undefined eseten ne hozzon letre uj span-t
+    // ures string eseten letrehozna egy ures span taget a html-re ami felesleges.
+    const newElement = { // definialok egy uj elementet
+        lastName: lastNameValue, // az uj objektum lastName erteke a lastNameValue lesz
+        firstName: firstNameValue, // az uj objektum firstName erteke a firstNameValue lesz
+        firstName2: firstName2Value // az uj objektum firstName2 erteke a firstName2Value lesz
+    }
+    array.push(newElement); // hozzaadom az arrayhez az uj objektumot
+    menuContainer.innerHTML = ''; // A tablazatom tartalmat ures stringel teszem egyenlove, ami azt eredmenyezi hogy torlodik a tabla
+    renderMenu() // ujra renderelem a fuggveny
+})
