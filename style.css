@@ -1,0 +1,17 @@
+body{
+    font-size: xx-large;
+}
+
+span {
+    
+    width: 160px;
+    display: inline-block;
+    text-align: center;
+}
+
+.form{
+    border: 1px green solid;
+    width: fit-content;
+    padding: 12px;
+    margin: 20px;
+}
