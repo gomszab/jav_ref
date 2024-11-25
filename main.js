@@ -32,10 +32,12 @@ function renderMenu(){ // definialom a renderMenu fuggvenyt
         const rowLastName =document.createElement('span'); // Letrehozok egy uj span elemet
         rowLastName.innerHTML = currentElement.lastName; // a cella tartalma az aktualis elem lastname tulajdonsaga
         row.appendChild(rowLastName); // Hozzafuzom a most letrehozott spant a korabban letrehozott sorhoz
+        if(currentElement.firstName2 !== undefined){ // vizsgalom a firstName erteket a ciklusvaltozo objektumanak, ha az nem egyenlo undefineddel, akkor vegrehajtja az elagazason beluli utasitasokat
+            const rowFirstName =document.createElement('span'); // Letrehozok egy uj span elemet
+            rowFirstName.innerHTML = currentElement.firstName; // a cella tartalma az aktualis elem firstname tulajdonsaga
+            row.appendChild(rowFirstName); // Hozzafuzom a most letrehozott spant a korabban letrehozott sorhoz
+        }
         
-        const rowFirstName =document.createElement('span'); // Letrehozok egy uj span elemet
-        rowFirstName.innerHTML = currentElement.firstName; // a cella tartalma az aktualis elem firstname tulajdonsaga
-        row.appendChild(rowFirstName); // Hozzafuzom a most letrehozott spant a korabban letrehozott sorhoz
         if(currentElement.firstName2 !== undefined){ // vizsgalom a firstName2 erteket a ciklusvaltozo objektumanak, ha az nem egyenlo undefineddel, akkor vegrehajtja az elagazason beluli utasitasokat
             const rowFirstName2 =document.createElement('span'); // Letrehozok egy uj span elemet
             rowFirstName2.innerHTML = currentElement.firstName2; // a cella tartalma az aktualis elem firstname2 tulajdonsaga
@@ -59,20 +61,15 @@ form.addEventListener('submit', function(e){
     for(const errorElement of errorHtmlElements){ // Vegigiteralunk a visszakapott errorhtmlelementeken
         errorElement.innerHTML = ''; // toroljuk az aktualis elem tartalmat
     }
-   
-    let valid = true; // a valid valtozo erteke igaz
 
-    if(!validateFormHtmlField(lastNameHtmlElement, "A vezeteknev megadasa kotelezo")){ // Ha a validateFormHtmlField fuggveny hamissal ter vissza a bementei lastName htmlElement eseten
-        valid = false; // a valid valtozo erteket false-ra allitjuk
+    let nonemptyFirstNameHtmlElement = firstNameHtmlElement; // egy lokalis valtozoba eltaroljuk a firstHtmlElementet
+    if(firstNameHtmlElement.value === '' && firstName2HtmlElement.value !== ''){ // Ha a firstHtmlElement ures, de a first2HtmlElement nem ures
+        nonemptyFirstNameHtmlElement = firstName2HtmlElement; // A lokalis valtozoba belerakjuk a firstName2 HtmlElementet
     }
 
-    if(!validateFormHtmlField(firstNameHtmlElement, "A keresztnev megadasa kotelezo")){ // Ha a validateFormHtmlField fuggveny hamissal ter vissza a bementei lastName htmlElement eseten
-        valid = false;  // a valid valtozo erteket false-ra allitjuk
-    }
-
-    if(valid){  // a valid valtozo erteke meg mindig igaz, akkor
+    if(simpleValidation(lastNameHtmlElement, nonemptyFirstNameHtmlElement)){  // ha a lastname es legalabb egy keresztnev mezo erteke meg van adva, akkor
         const lastNameValue = lastNameHtmlElement.value; // a lastNameHtmlElement value erteket beleteszem egy lokalis valtozoba
-        const firstNameValue = firstNameHtmlElement.value; // a firstNameHtmlElement value erteket beleteszem egy lokalis valtozoba
+        const firstNameValue = firstNameHtmlElement.value === "" ? undefined : firstNameHtmlElement.value; // a firstNameHtmlElement2 value erteket vagy egy undefined-t beleteszek egy lokalis valtozoba
         const firstName2Value = firstName2HtmlElement.value === "" ? undefined : firstName2HtmlElement.value; // a firstNameHtmlElement2 value erteket vagy egy undefined-t beleteszek egy lokalis valtozoba
         const newElement = { // definialok egy uj elementet
             lastName: lastNameValue, // az uj objektum lastName erteke a lastNameValue lesz
@@ -86,6 +83,20 @@ form.addEventListener('submit', function(e){
     }
     
 })
+
+function simpleValidation(lastNameInput, firstNameInput) {
+    let valid = true; // a valid valtozo erteke igaz
+
+    if(!validateFormHtmlField(lastNameInput, "A vezeteknev megadasa kotelezo")){ // Ha a validateFormHtmlField fuggveny hamissal ter vissza a bementei lastName htmlElement eseten
+        valid = false; // a valid valtozo erteket false-ra allitjuk
+    }
+
+    if(!validateFormHtmlField(firstNameInput, "A keresztnev megadasa kotelezo")){ // Ha a validateFormHtmlField fuggveny hamissal ter vissza a bementei lastName htmlElement eseten
+        valid = false;  // a valid valtozo erteket false-ra allitjuk
+    }
+
+    return valid; // vissyaterek a lokalis valid valtozo ertekevel
+}
 
 function validateFormHtmlField(inputhtmlElement, errormessage){ // definialjuk a validateFormHtmlField fuggvenyt
     let valid = true; // definialjuk a valid lokalis valtozot true ertekkel
