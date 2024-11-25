@@ -62,10 +62,7 @@ form.addEventListener('submit', function(e){
         errorElement.innerHTML = ''; // toroljuk az aktualis elem tartalmat
     }
 
-    let nonemptyFirstNameHtmlElement = firstNameHtmlElement; // egy lokalis valtozoba eltaroljuk a firstHtmlElementet
-    if(firstNameHtmlElement.value === '' && firstName2HtmlElement.value !== ''){ // Ha a firstHtmlElement ures, de a first2HtmlElement nem ures
-        nonemptyFirstNameHtmlElement = firstName2HtmlElement; // A lokalis valtozoba belerakjuk a firstName2 HtmlElementet
-    }
+    const nonemptyFirstNameHtmlElement = getNonEmptyFirstNameField(firstNameHtmlElement, firstName2HtmlElement) // Eltaroljuk a visszateresi erteket, ami remelhetoleg nem az ures beviteli mezo lesz 
 
     if(simpleValidation(lastNameHtmlElement, nonemptyFirstNameHtmlElement)){  // ha a lastname es legalabb egy keresztnev mezo erteke meg van adva, akkor
         const lastNameValue = lastNameHtmlElement.value; // a lastNameHtmlElement value erteket beleteszem egy lokalis valtozoba
@@ -83,6 +80,15 @@ form.addEventListener('submit', function(e){
     }
     
 })
+
+function getNonEmptyFirstNameField(firstNameField, firstName2Field){ // Vagy az elso elemmel, vagy ha az ures es a masodik nem, akkor a masodik elemmel ter vissza
+    let nonemptyFirstNameHtmlElement = firstNameField ; // egy lokalis valtozoba eltaroljuk a firstHtmlElementet
+    // erre azert van szukseg, hogy ne nullal terjen vissza semmi esetre sem, ha mindketto ures, azt konnyebb kezelni meg igy is
+    if(firstNameField.value === '' && firstName2Field.value !== ''){ // Ha a firstHtmlElement ures, de a first2HtmlElement nem ures
+        nonemptyFirstNameHtmlElement = firstName2Field; // A lokalis valtozoba belerakjuk a firstName2 HtmlElementet
+    }
+    return nonemptyFirstNameHtmlElement
+}
 
 function simpleValidation(lastNameInput, firstNameInput) {
     let valid = true; // a valid valtozo erteke igaz
