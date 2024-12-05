@@ -1,4 +1,4 @@
-# Gyakran ismételt kérdése
+# Gyakran ismételt kérdések
 
 ## General
 ### Commitolhatok többet?
@@ -15,6 +15,8 @@ Ami segít a kódod megértésében
 Nekem mindegy. Amiből érteni fogod a kódot.
 ### Írjak-e readme-t?
 Nekem mindegy.
+### Lehet-e private repo?
+Lehet. Feltéve, ha meghívsz.
 
 ## Commit 1
 ### Úgy kell-e megcsinálni, ahogy órán vettük?
