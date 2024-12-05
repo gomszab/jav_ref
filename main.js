@@ -114,6 +114,5 @@ function validateFormHtmlField(inputhtmlElement, errormessage){ // definialjuk a
         }
         valid = false; // a valid valtozo erteket hamisra csereljuk
     }
-
     return valid; // visszaterek a lokalis valid valtozoval, ami akkor hamis ha htmlelement nem ment at a validacion, egyebkent igazzal ter vissza
 }
