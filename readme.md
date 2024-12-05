@@ -47,7 +47,7 @@ Felőlem igen.
 A header objektumát nem muszáj.
 
 ## Commit 5
-### Szét csúszik a táblázat, elágazás nélkül. Mit tegyek?
+### Szétcsúszik a táblázat, elágazás nélkül. Mit tegyek?
 Minden sorban függetlenül, hogy van-e értéke az adott elemnek vagy nincs, be kell itt állítani a colspan/rowspant 2-re.
 ### A ciklusban kell-e kiraknom a headert is?
 Nem, igazából a tömbben nem is muszáj benne lennie.
