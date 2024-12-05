@@ -30,7 +30,7 @@ Az első commitnál semmiképpen sem
 ### Constot vagy letet használjak?
 Én a constot javaslom, a referenciában is az van
 ### Kell írnom kommentet a változó deklarációkhoz? a referencia repón kimaradt.
-Ahhoz kell csak igazán, elfelejtődött nálam.
+Ahhoz is kell, elfelejtődött nálam.
 ### Használhatok tömböt?
 Nem.
 ### Használhatok ciklust?
