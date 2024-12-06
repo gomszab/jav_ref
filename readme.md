@@ -17,6 +17,10 @@ Nekem mindegy. Amiből érteni fogod a kódot.
 Nekem mindegy.
 ### Lehet-e private repo?
 Lehet. Feltéve, ha meghívsz.
+### Azt a sort is kommenteznem kell, amit a Tanár Úr nem?
+Igen. A lényeg, hogy tudjad mit csinál az adott sor.
+### Írhatom ugyanazokat a commenteket, amiket a Tanár Úr írt?
+Nem.
 
 ## Commit 1
 ### Úgy kell-e megcsinálni, ahogy órán vettük?
@@ -51,3 +55,7 @@ A header objektumát nem muszáj.
 Minden sorban függetlenül, hogy van-e értéke az adott elemnek vagy nincs, be kell itt állítani a colspan/rowspant 2-re.
 ### A ciklusban kell-e kiraknom a headert is?
 Nem, igazából a tömbben nem is muszáj benne lennie.
+
+## Commit 11
+### Mi az az összetett validáció?
+A feladatsorok B/4-es feladatát neveztem el így.
