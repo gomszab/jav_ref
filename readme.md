@@ -21,6 +21,8 @@ Lehet. Feltéve, ha meghívsz.
 Igen. A lényeg, hogy tudjad mit csinál az adott sor.
 ### Írhatom ugyanazokat a commenteket, amiket a Tanár Úr írt?
 Nem.
+### Beleírhatom commentekbe a változóknál a változók típusát is?
+Hát ha nem tudod őket, akkor erősen javasolt.
 
 ## Commit 1
 ### Úgy kell-e megcsinálni, ahogy órán vettük?
