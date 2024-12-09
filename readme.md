@@ -12,7 +12,7 @@ Szólj nekem.
 ### Mik legyenek a változóneveim?
 Ami segít a kódod megértésében
 ### Mit írjak commentbe?
-Nekem mindegy. Amiből érteni fogod a kódot.
+Nekem mindegy. Amiből érteni fogod a kódot. például: mi a függvény visszatérési értéke, milyen típusú az adott változó, miért hozzuk hívjuk meg a metódust, mi jön létre etc. Ha nem tudod miből érted meg, akkor kérdezz.
 ### Írjak-e readme-t?
 Nekem mindegy.
 ### Lehet-e private repo?
@@ -23,6 +23,14 @@ Igen. A lényeg, hogy tudjad mit csinál az adott sor.
 Nem.
 ### Beleírhatom commentekbe a változóknál a változók típusát is?
 Hát ha nem tudod őket, akkor erősen javasolt.
+### A B/4es validációt mikor kell megírnom?
+A commit 11-ben
+### A commit 9 tartalmaz validációt?
+Nem. A commit 9 esetén összesen 1 if van a kódodban: a táblázat generálásához tartozó.
+### A ciklus bevezetésekor kell elágazást is használnom hogy jól nézzen ki a táblázat?
+Nem. Sőt tilos. A ciklus bevezetésekor nem kell elágazást használnod.
+### Máshogy csináltam meg a feladatot, de működik akkor az érvénytelen és kezdhetem előlről?
+Amíg betartod a szabályokat, és nem használsz addig a pontig vezérlési szerkezeteket, amíg a commit nem utal rá, megcsinálhatod máshogyan is. Értsd: 3. commit előtt nincs objektum, 4 előtt nincs tömb, 5. előtt nincs ciklus, 6 előtt nincs elágazás, 10 előtt nincs a validáció függvénybe szervezve, 11. előtt nincs B/4es validáció.
 
 ## Commit 1
 ### Úgy kell-e megcsinálni, ahogy órán vettük?
@@ -61,3 +69,7 @@ Nem, igazából a tömbben nem is muszáj benne lennie.
 ## Commit 11
 ### Mi az az összetett validáció?
 A feladatsorok B/4-es feladatát neveztem el így.
+
+### Commit 17
+## Egy g vel vagy 2 g-vel kell írnom a commit üzenetet?
+2-vel, de az 1-et is elfogadom, mert elírtam. Örülnék ha 2g-vel írnád
