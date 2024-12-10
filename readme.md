@@ -29,7 +29,7 @@
 | szerzok | szerzok |
 | evszamok | evszamok |
 
-Javaslom, hogy ne az evszamokkal kezdj.
+Javaslom, hogy ne az evszamokkal kezdj. MINDEN KÓDSOR (kiv kapcsos zárójeles) KOMMENTEZVE LEGYEN!!! Nem összefoglaló comment, hanem a sorok végén //-el
 
 # Gyakran ismételt kérdések
 
