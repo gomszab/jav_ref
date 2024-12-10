@@ -1,3 +1,36 @@
+
+| Commit        | Mit használhatok?           | Hogy néz ki?  |
+| ------------- |:-------------:| -----:|
+| 1. linearis utasitas vegrehajtas | semmit | megjelenik a táblázat |
+| 2. valtozok bevezetese| változókat |  megjelenik a táblázat |
+| 3. osszetett objektum bevezetese | objektumot |  megjelenik a táblázat | 
+| 4. tomb bevezetese | tömböt, és az elemeket konkrét számokkal szeded ki, a header nem kell benne legyen a tömbben |  megjelenik a táblázat | 
+| 5. ciklus bevezetese | ciklust | elágazás nélkül a dupla sorok / dupla oszlopok üresek/undefined írással rendelkeznek | 
+| 6. elagazas bevezetese | elágazást | a táblázat újra megjelenik rendesen | 
+| 7. fuggveny bevezetese | függvényt paraméter nélkül | a táblázat megjelenik | 
+| 8. esemenykezelo bevezetese | az eseménykezelőben nincs validáció | az ürlapnál minden esetben hozzáfűzzük az új elemet | 
+| 9. egyszeru validacio vegrehajtasa linearisan | nem lehet kiszervezve függvénybe a validáció | működik az egyszerű validáció B/3 | 
+| 10. egyszeru validacio fuggvenybe szervezese, parameterek bevezetese | függvényt paraméterrel | működik az egyszerű validáció B/3 | 
+| 11. osszetett validacio vegrehajtasa linearisan | nem lehet kiszervezve függvénybe az összetett validáció | működik az összetett validáció B/4 | 
+| 12. osszetett validacio fuggvenybe szervezese | összetett validáció függvénybe szervezve |    $1 | 
+| 13. tabla fejlec generalas bevezetese | függvényben generáljuk a tabla fejlécét, és ciklust is használunk hozzá |  | 
+| 14. tablageneralas fuggvenyenek bevezetese | paraméter a táblagenerálásban |  | 
+| 15. form generalas fuggveny bevezetese | akármit (tömb objektum segédfüggvények...) | a form megjelenik | 
+| 16. fuggvenydokumentacio letrehozasa | a /** */ | a típusok és leírások megjelennek a függvények felett | 
+| 17. fuggvenyek kiszervezese uj fajlba | functions.js-t létrehozhatod |     | 
+
+| repónév        | pdf           |
+| ------------- |:-------------:|
+| minta | uralkodok |
+| irodalom | irodalom |
+| groteszk | groteszk |
+| harcok | harcok |
+| fizikusok | fizikusok |
+| szerzok | szerzok |
+| evszamok | evszamok |
+
+Javaslom, hogy ne az evszamokkal kezdj.
+
 # Gyakran ismételt kérdések
 
 ## General
