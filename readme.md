@@ -58,8 +58,8 @@ Nem.
 Hát ha nem tudod őket, akkor erősen javasolt.
 ### A B/4es validációt mikor kell megírnom?
 A commit 11-ben
-### A commit 9 tartalmaz validációt?
-Nem. A commit 9 esetén összesen 1 if van a kódodban: a táblázat generálásához tartozó.
+### A commit 8 tartalmaz validációt?
+Nem. A commit 8 esetén összesen 1 if van a kódodban: a táblázat generálásához tartozó.
 ### A ciklus bevezetésekor kell elágazást is használnom hogy jól nézzen ki a táblázat?
 Nem. Sőt tilos. A ciklus bevezetésekor nem kell elágazást használnod.
 ### Máshogy csináltam meg a feladatot, de működik akkor az érvénytelen és kezdhetem előlről?
