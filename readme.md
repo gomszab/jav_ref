@@ -21,13 +21,13 @@
 
 | repónév        | pdf           |
 | ------------- |:-------------:|
-| minta | uralkodok |
-| irodalom | irodalom |
-| groteszk | groteszk |
-| harcok | harcok |
-| fizikusok | fizikusok |
-| szerzok | szerzok |
-| evszamok | evszamok |
+| uralkodok | [uralkodok](./uralkodok.pdf) |
+| irodalom | [irodalom](./Irodalom.pdf) |
+| groteszk | [groteszk](./groteszk.pdf) |
+| harcok | [harcok](./harcok.pdf) |
+| fizikusok | [fizikusok](./Fizikusok.pdf) |
+| szerzok | [szerzok](./szerzok.pdfszerzok) |
+| evszamok | [evszamok](./evszamok.pdf) |
 
 Javaslom, hogy ne az evszamokkal kezdj. MINDEN KÓDSOR (kiv kapcsos zárójeles) KOMMENTEZVE LEGYEN!!! Nem összefoglaló comment, hanem a sorok végén //-el
 
