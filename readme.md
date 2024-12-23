@@ -1,4 +1,6 @@
 
+# [technikai cikkek, példák](./technical.md)
+
 | Commit szám | Commit        | Mit használhatok?           | Hogy néz ki?  | példa commit url |
 |:------------|:------:|:-------------:| -----:|----:|
 | 1. | linearis utasitas vegrehajtas | semmit | megjelenik a táblázat | [link](https://github.com/gomszab/jav_ref/tree/8d74e376e0a6fca23edb716e438778dfd27c86ac)
