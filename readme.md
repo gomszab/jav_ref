@@ -1,5 +1,5 @@
 
-# [technikai cikkek, példák](./technical.md)
+# [technikai cikkek, példák (ha átismételnéd, akkor kattints ide!)](./technical.md)
 
 | Commit szám | Commit        | Mit használhatok?           | Hogy néz ki?  | példa commit url |
 |:------------|:------:|:-------------:| -----:|----:|
