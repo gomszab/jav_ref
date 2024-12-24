@@ -1,6 +1,63 @@
+# Tartalomjegyzék
+- [Tartalomjegyzék](#tartalomjegyzék)
+- [technikai cikkek, példák (ha átismételnéd, akkor kattints ide!)](#technikai-cikkek-példák-ha-átismételnéd-akkor-kattints-ide)
+- [Melyik csomag mit tartalmaz](#melyik-csomag-mit-tartalmaz)
+- [Melyik commitnak mi az üzenete és mit tartalmazhat](#melyik-commitnak-mi-az-üzenete-és-mit-tartalmazhat)
+- [Repó elnevezési kisokos](#repó-elnevezési-kisokos)
+- [Gyakran ismételt kérdések](#gyakran-ismételt-kérdések)
+  - [General](#general)
+    - [Commitolhatok többet?](#commitolhatok-többet)
+    - [Kifelejtettem valamit a commitból, de még nem álltam neki a következőnek. Mit tegyek?](#kifelejtettem-valamit-a-commitból-de-még-nem-álltam-neki-a-következőnek-mit-tegyek)
+    - [Kimaradt valami ezer éve. Mit tegyek?](#kimaradt-valami-ezer-éve-mit-tegyek)
+    - [Nincs itt a kérdésem. Mi legyen?](#nincs-itt-a-kérdésem-mi-legyen)
+    - [Mik legyenek a változóneveim?](#mik-legyenek-a-változóneveim)
+    - [Mit írjak commentbe?](#mit-írjak-commentbe)
+    - [Írjak-e readme-t?](#írjak-e-readme-t)
+    - [Lehet-e private repo?](#lehet-e-private-repo)
+    - [Azt a sort is kommenteznem kell, amit a Tanár Úr nem?](#azt-a-sort-is-kommenteznem-kell-amit-a-tanár-úr-nem)
+    - [Írhatom ugyanazokat a commenteket, amiket a Tanár Úr írt?](#írhatom-ugyanazokat-a-commenteket-amiket-a-tanár-úr-írt)
+    - [Beleírhatom commentekbe a változóknál a változók típusát is?](#beleírhatom-commentekbe-a-változóknál-a-változók-típusát-is)
+    - [A B/4es validációt mikor kell megírnom?](#a-b4es-validációt-mikor-kell-megírnom)
+    - [A commit 8 tartalmaz validációt?](#a-commit-8-tartalmaz-validációt)
+    - [A ciklus bevezetésekor kell elágazást is használnom hogy jól nézzen ki a táblázat?](#a-ciklus-bevezetésekor-kell-elágazást-is-használnom-hogy-jól-nézzen-ki-a-táblázat)
+    - [Máshogy csináltam meg a feladatot, de működik akkor az érvénytelen és kezdhetem előlről?](#máshogy-csináltam-meg-a-feladatot-de-működik-akkor-az-érvénytelen-és-kezdhetem-előlről)
+  - [Commit 1](#commit-1)
+    - [Úgy kell-e megcsinálni, ahogy órán vettük?](#úgy-kell-e-megcsinálni-ahogy-órán-vettük)
+    - [Diveket meg spanokat kell létrehoznom nekem is?](#diveket-meg-spanokat-kell-létrehoznom-nekem-is)
+    - [Css meg html mennyire fontos, amit a dolgozatban meg kellett csinálni?](#css-meg-html-mennyire-fontos-amit-a-dolgozatban-meg-kellett-csinálni)
+    - [Használhatok tömböt és ciklust?](#használhatok-tömböt-és-ciklust)
+  - [Commit 2](#commit-2)
+    - [Constot vagy letet használjak?](#constot-vagy-letet-használjak)
+    - [Kell írnom kommentet a változó deklarációkhoz? a referencia repón kimaradt.](#kell-írnom-kommentet-a-változó-deklarációkhoz-a-referencia-repón-kimaradt)
+    - [Használhatok tömböt?](#használhatok-tömböt)
+    - [Használhatok ciklust?](#használhatok-ciklust)
+  - [Commit 3](#commit-3)
+    - [Lehetnek-e ugyanazok az objektumok tulajdonságai?](#lehetnek-e-ugyanazok-az-objektumok-tulajdonságai)
+  - [Commit 4](#commit-4)
+    - [Minden objektumot bele kell-e tenni a tömbbe?](#minden-objektumot-bele-kell-e-tenni-a-tömbbe)
+  - [Commit 5](#commit-5)
+    - [Szétcsúszik a táblázat, elágazás nélkül. Mit tegyek?](#szétcsúszik-a-táblázat-elágazás-nélkül-mit-tegyek)
+    - [A ciklusban kell-e kiraknom a headert is?](#a-ciklusban-kell-e-kiraknom-a-headert-is)
+  - [Commit 11](#commit-11)
+    - [Mi az az összetett validáció?](#mi-az-az-összetett-validáció)
+    - [Commit 17](#commit-17)
+  - [Egy g vel vagy 2 g-vel kell írnom a commit üzenetet?](#egy-g-vel-vagy-2-g-vel-kell-írnom-a-commit-üzenetet)
+- [b-csomag](#b-csomag)
+- [c-csomag](#c-csomag)
+
 
 # [technikai cikkek, példák (ha átismételnéd, akkor kattints ide!)](./technical.md)
 
+# Melyik csomag mit tartalmaz
+| csomag        | commitok           |
+| ------------- |:-------------:|
+| A csomag| Minden commit üzenetet tartalmaz |
+| B csomag| 9+ committól tartalmazza az üzeneteket [link](#b-csomag) |
+| C csomag| Nem nézek commit üzeneteket, csak commitokat (minimum 4 commit) [link](#c-csomag) |
+
+
+
+# Melyik commitnak mi az üzenete és mit tartalmazhat
 | Commit szám | Commit        | Mit használhatok?           | Hogy néz ki?  | példa commit url |
 |:------------|:------:|:-------------:| -----:|----:|
 | 1. | linearis utasitas vegrehajtas | semmit | megjelenik a táblázat | [link](https://github.com/gomszab/jav_ref/tree/8d74e376e0a6fca23edb716e438778dfd27c86ac)
@@ -20,6 +77,9 @@
 | 15. |form generalas fuggveny bevezetese | akármit (tömb objektum segédfüggvények...) | a form megjelenik | 
 | 16. |fuggvenydokumentacio letrehozasa | a /** */ | a típusok és leírások megjelennek a függvények felett |  
 | 17. |fuggvenyek kiszervezese uj fajlba | functions.js-t létrehozhatod |     |
+
+
+# Repó elnevezési kisokos
 
 | repónév        | pdf           |
 | ------------- |:-------------:|
@@ -108,3 +168,11 @@ A feladatsorok B/4-es feladatát neveztem el így.
 ### Commit 17
 ## Egy g vel vagy 2 g-vel kell írnom a commit üzenetet?
 2-vel, de az 1-et is elfogadom, mert elírtam. Örülnék ha 2g-vel írnád
+
+# b-csomag
+A B csomag annyit tesz, hogy nem kell azokat a lépéseket megcsinálnod, amik kerülő utasok minthogy bevezetsz ciklust, változót stb külön commitokba
+A tábla generálás legyen meg, meg a feliratkozás és csak a 9. commit üzenettől nézem
+Értelemszerűen a komment minden sornál továbbra is marad
+
+# c-csomag
+A C csomag annyit tesz, hogy a funkcionalításokat képes vagy önállóan külön commitokba szervezni. Értsd nem 1 commitot várok, látni szeretném az alkalmazás fejlődését a commit historyban. Amennyiben 1 commitos, az sajnos önálló gyakorlásnak jó, de pótlásnak nem fogadom el.
